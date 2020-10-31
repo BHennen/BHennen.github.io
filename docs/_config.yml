@@ -70,7 +70,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : brycehennen
 facebook:
   username               :
   app_id                 :
@@ -82,7 +82,7 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-
+    - "https://twitter.com/brycehennen"
 # Analytics
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
