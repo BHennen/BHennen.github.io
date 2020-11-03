@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"3XHS":function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return u}));var r=n("q1tI"),a=n.n(r);function c(e){return a.a.createElement("h1",null,e.header_text)}function u(){return a.a.createElement("div",{style:{color:"teal"}},a.a.createElement(c,{header_text:"About"}),a.a.createElement("p",null,"Such wow. Very React."))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-ea43f24a2743dc19cc26.js.map
