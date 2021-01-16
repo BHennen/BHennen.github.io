@@ -20,7 +20,7 @@ const BlogIndex = ({ data, location }) => {
                     I am currently working on this website. Stay tuned for my
                     first post, which will be about how I built it!
                 </p>
-                <Spiral theta={0} />
+                <Spiral offsetAngle={0} />
             </Layout>
         )
     }
