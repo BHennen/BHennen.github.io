@@ -9,22 +9,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Get all markdown blog posts sorted by date, filtering out those I do not want published
   const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: {frontmatter: {publish: {ne: false}}}
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
-        ) {
-          nodes {
-            id
-            fields {
-              slug
-            }
+      `
+          {
+              allMdx(
+                  filter: { frontmatter: { publish: { ne: false } } }
+                  sort: { fields: [frontmatter___date], order: ASC }
+                  limit: 1000
+              ) {
+                  nodes {
+                      id
+                      fields {
+                          slug
+                      }
+                  }
+              }
           }
-        }
-      }
-    `
+      `
   )
 
   if (result.errors) {
@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.allMdx.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -62,14 +62,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === `Mdx`) {
+      const value = createFilePath({ node, getNode })
 
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+      createNodeField({
+          name: `slug`,
+          node,
+          value,
+      })
   }
 }
 

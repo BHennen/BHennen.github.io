@@ -4,12 +4,10 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Spiral from "../components/spiral"
-
 
 const BlogIndex = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
-    const posts = data.allMarkdownRemark.nodes
+    const posts = data.allMdx.nodes
 
     if (posts.length === 0) {
         return (
@@ -20,7 +18,6 @@ const BlogIndex = ({ data, location }) => {
                     I am currently working on this website. Stay tuned for my
                     first post, which will be about how I built it!
                 </p>
-                <Spiral offsetAngle={0} />
             </Layout>
         )
     }
@@ -81,7 +78,7 @@ export const pageQuery = graphql`
                 title
             }
         }
-        allMarkdownRemark(
+        allMdx(
             filter: { frontmatter: { publish: { ne: false } } }
             sort: { fields: [frontmatter___date], order: DESC }
         ) {
