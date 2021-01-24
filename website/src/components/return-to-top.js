@@ -4,14 +4,19 @@ import useScrollStatus from "./hooks/scroll-state"
 const ReturnToTop = props => {
   const scrolled = useScrollStatus(10)
 
+  const containerStyle = {
+    visibility: scrolled ? "visible" : "hidden",
+    position: "fixed",
+    bottom: "1.2rem",
+    right: "1.2rem",
+  }
+
+  const arrowStyle = { width: "2.5rem", height: "2.5rem" }
+
   return (
-    <a
-      id="ReturnTop"
-      href="#top-of-page"
-      visibility={scrolled ? "visible" : "hidden"}
-    >
+    <a id="ReturnTop" href="#top-of-page" style={containerStyle}>
       <span class="screen-reader-text">Return to top of page.</span>
-      <svg viewBox="0 0 54 54" style={{width:"30px", height:"30px"}}>
+      <svg viewBox="0 0 54 54" style={arrowStyle}>
         <g>
           <path
             d="M27,0C12.112,0,0,12.112,0,27s12.112,27,27,27s27-12.112,27-27S41.888,0,27,0z M27,52C13.215,52,2,40.785,2,27

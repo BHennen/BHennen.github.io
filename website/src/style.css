@@ -335,8 +335,9 @@ a:focus {
 /* Screen reader */
 
 .screen-reader-text {
-  /* From CSS tricks: https://css-tricks.com/snippets/css/accessibilityseo-friendly-css-hiding/x */
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
+  position:absolute!important;
+  clip:rect(1px,1px,1px,1px);
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
