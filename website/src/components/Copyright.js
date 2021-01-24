@@ -1,9 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useSiteMetadata } from "./hooks/use-site-metadata"
 
-export const PureCopyright = ({ data }) => {
-  const site_author = data.site.siteMetadata.author.name
-  const copyright = data.site.siteMetadata.copyright
+export const Copyright = (props) => {
+  const { author, copyright } = useSiteMetadata()
+  const site_author = author.name
   let cur_year = new Date().getFullYear()
 
   return (
@@ -14,24 +14,6 @@ export const PureCopyright = ({ data }) => {
       {site_author}
     </div>
   )
-}
-
-const Copyright = props => {
-  const data = useStaticQuery(graphql`
-      query {
-        site {
-          siteMetadata {
-            author{
-              name
-            }
-            copyright
-          }
-        }
-      }
-    `
-  )
-  
-  return <PureCopyright {...props} data={data}></PureCopyright>
 }
 
 export default Copyright
