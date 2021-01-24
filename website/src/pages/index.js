@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const MainPage = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
     const posts = data.allMdx.nodes
 
@@ -24,8 +24,7 @@ const BlogIndex = ({ data, location }) => {
 
     return (
         <Layout location={location} title={siteTitle}>
-            <SEO title="All posts" />
-            <Bio />
+            <SEO title="Main Page" />
             <ol style={{ listStyle: `none` }}>
                 {posts.map(post => {
                     const title = post.frontmatter.title || post.fields.slug
@@ -69,7 +68,7 @@ const BlogIndex = ({ data, location }) => {
     )
 }
 
-export default BlogIndex
+export default MainPage
 
 export const pageQuery = graphql`
     query {

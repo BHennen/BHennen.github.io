@@ -1,25 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function Copyright(props) {
-
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author {
-              name
-            }
-            copyright
-          }
-        }
-      }
-    `
-  )
-  
-  const site_author = site?.siteMetadata?.author?.name
-  const copyright = site?.siteMetadata?.copyright
+export const PureCopyright = ({ data }) => {
+  const site_author = data.site.siteMetadata.author.name
+  const copyright = data.site.siteMetadata.copyright
   let cur_year = new Date().getFullYear()
 
   return (
@@ -30,5 +14,24 @@ export default function Copyright(props) {
       {site_author}
     </div>
   )
-        
 }
+
+const Copyright = props => {
+  const data = useStaticQuery(graphql`
+      query {
+        site {
+          siteMetadata {
+            author{
+              name
+            }
+            copyright
+          }
+        }
+      }
+    `
+  )
+  
+  return <PureCopyright {...props} data={data}></PureCopyright>
+}
+
+export default Copyright

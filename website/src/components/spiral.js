@@ -3,11 +3,9 @@ import React, { useRef, useEffect, useState } from "react"
 const GoldenSpiral = props => {
     let spiral_ref = useRef()
 
-    const phi = 0.5 * (1 + Math.sqrt(5)) // Golden number
-
     const [offsetAngle, setOffsetAngle] = useState(props.offsetAngle) // Rotation of the spiral
     const [stepSize, setStepSize] = useState(0.05) // Precision of the spiral (how smooth the spiral looks)
-    const [scale, setScale] = useState(0.001)
+    const [scale, setScale] = useState(0.001) //eslint-disable-line
 
     function getMaxRadius(centerPoint, rectBounds) {
         // Gets the maximum radius that the circle will be drawn at
@@ -37,6 +35,9 @@ const GoldenSpiral = props => {
     }
     
     useEffect(() => {
+        const phi = 0.5 * (1 + Math.sqrt(5)) // Golden number
+
+
         function drawSpiral(canvasContext) {
             let width = canvasContext.canvas.width
             let height = canvasContext.canvas.height
@@ -85,8 +86,6 @@ const GoldenSpiral = props => {
                 .slice(0, -2)
             canvas.width = width * ratio
             canvas.height = height * ratio
-            canvas.style.width = `${width}px`
-            canvas.style.height = `${height}px`
             drawSpiral(canvasContext)
         }
 
@@ -103,30 +102,33 @@ const GoldenSpiral = props => {
 
     return (
         <div>
-            Step Size:
-            <input
-                label="Step Size"
-                onChange={val => setStepSize(Number(val.target.value))}
-                type="range"
-                min="0.01"
-                max="1"
-                step="0.01"
-                value={stepSize}
-            />
-            Offset Angle:
-            <input
-                label="Offset Angle"
-                onChange={val => setOffsetAngle(Number(val.target.value))}
-                type="range"
-                min="0"
-                max={2*Math.PI}
-                step="0.05"
-                value={offsetAngle}
-            />
-
+            <span style={{ width: "50%", display: "inline-block" }}>
+                Step Size:
+                <input
+                    label="Step Size"
+                    onChange={val => setStepSize(Number(val.target.value))}
+                    type="range"
+                    min="0.01"
+                    max="1"
+                    step="0.01"
+                    value={stepSize}
+                />
+            </span>
+            <span style={{ width: "50%", display: "inline-block" }}>
+                Offset Angle:
+                <input
+                    label="Offset Angle"
+                    onChange={val => setOffsetAngle(Number(val.target.value))}
+                    type="range"
+                    min="0"
+                    max={2 * Math.PI}
+                    step="0.05"
+                    value={offsetAngle}
+                />
+            </span>
             <canvas
                 ref={spiral_ref}
-                style={{width: "100%"}}
+                style={{ width: "100%", display: "inline-block" }}
             />
         </div>
     )

@@ -5,11 +5,8 @@ module.exports = {
             name: `Bryce Hennen`,
             quote: `Let's make awesome things together!`,
         },
-        description: `Bryce Hennen's website. I like to create fun projects that have a positive impact on the world.`,
+        description: `Bryce Hennen's personal website.`,
         siteUrl: `https://bhennen.github.io`,
-        social: {
-            twitter: `brycehennen`,
-        },
         copyright: 2020,
     },
     plugins: [
@@ -55,6 +52,7 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
+        `gatsby-plugin-slug`,
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {

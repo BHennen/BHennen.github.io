@@ -9,22 +9,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Get all markdown blog posts sorted by date, filtering out those I do not want published
   const result = await graphql(
-      `
-          {
-              allMdx(
-                  filter: { frontmatter: { publish: { ne: false } } }
-                  sort: { fields: [frontmatter___date], order: ASC }
-                  limit: 1000
-              ) {
-                  nodes {
-                      id
-                      fields {
-                          slug
-                      }
-                  }
-              }
+    `
+      {
+        allMdx(
+          filter: { frontmatter: { publish: { ne: false } } }
+          sort: { fields: [frontmatter___date], order: ASC }
+          limit: 1000
+        ) {
+          nodes {
+            id
+            fields {
+              slug
+            }
           }
-      `
+        }
+      }
+    `
   )
 
   if (result.errors) {
@@ -56,20 +56,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
-  }
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `Mdx`) {
-      const value = createFilePath({ node, getNode })
-
-      createNodeField({
-          name: `slug`,
-          node,
-          value,
-      })
   }
 }
 
@@ -107,6 +93,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      publish: Boolean
     }
 
     type Fields {
