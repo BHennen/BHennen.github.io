@@ -2,6 +2,7 @@
 title: "Creating My Website Using Gatsby: Part 1"
 slug: "creating-my-website-using-gatsby/part-1"
 description: I explore the process of how I built my personal website. I show each step in detail, covering the design process, pitfalls, tools, code, and techniques used to build the website. The first post covers the first steps of my adventure into using Gatsby and React.
+excerpt: I show the creative process of building my personal website using Gatsby.
 date: "2020-01-23"
 publish: True
 tags: ["Programming", "Art", "Creative", "Guide", "Website", "Design"]
