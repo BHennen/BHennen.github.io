@@ -163,11 +163,11 @@ If our region experiences too much rainfall we can channel the water so that it 
 
 The topology and geology of our lands determines the watershed our lifeforms are located on. Our actions directly influence our watershed and we must be mindful of the other lifeforms that share our watershed with us.
 
-In the United States there are [tools](https://water.usgs.gov/lookup/getwatershed?11110103/www/cgi-bin/lookup/getwatershed) to help find out about your watershed and the health of it.
+In the USA there are [tools](https://water.usgs.gov/lookup/getwatershed?11110103/www/cgi-bin/lookup/getwatershed) to help find out about your watershed and the health of it.
 
 ## More
 
-There are plenty of other things to pay attention to regarding our Earth; it is up to each of us to determine what we find value in. The more we know the more we can better determine the effects of our current actions.
+There are plenty of other things to pay attention to regarding our Earth; it is up to each of us to determine what we find value in. The more we know the more we can better determine the effects of our current actions which lead to a better shared future for us all!
 
 <!-- TODO 
 ## Geology
