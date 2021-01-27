@@ -28,11 +28,11 @@ const ReturnToTop = props => {
 
   return (
     <Transition in={scrolled} timeout={500}>
-      {state => (
+      {transitionState => (
         <a
           id="ReturnTop"
           href="#top-of-page"
-          style={{ ...containerStyles, ...transitionStyles[state] }}
+          style={{ ...containerStyles, ...transitionStyles[transitionState] }}
         >
           <span class="screen-reader-text">Return to top of page.</span>
           <svg viewBox="0 0 54 54" style={{ ...arrowStyles }}>

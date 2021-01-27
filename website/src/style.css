@@ -337,6 +337,7 @@ a:focus {
 .screen-reader-text {
   position:absolute!important;
   clip:rect(1px,1px,1px,1px);
+  clip-path: rect(1px,1px,1px,1px);
   width:1px;
   height:1px;
   overflow:hidden;
