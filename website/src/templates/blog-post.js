@@ -1,8 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
-import Bio from "../components/bio"
+import Comments from "../components/Comments"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -28,17 +27,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </header>
         <MDXRenderer>{post.body}</MDXRenderer>
         <footer>{/* TODO: Call to action */}</footer>
-        <section id="comments">
-          <script
-            src="https://utteranc.es/client.js"
-            repo="BHennen/BHennen.github.io"
-            issue-term="pathname"
-            label="Comment"
-            theme="github-light"
-            crossorigin="anonymous"
-            async
-          ></script>
-        </section>
+        <Comments />
       </article>
       <nav className="blog-post-nav">
         <ul

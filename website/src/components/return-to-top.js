@@ -1,5 +1,5 @@
 import React from "react"
-import useScrollStatus from "./hooks/scroll-state"
+import useScrollStatus from "./hooks/use-scroll-state"
 import { Transition } from "react-transition-group"
 
 const ReturnToTop = props => {

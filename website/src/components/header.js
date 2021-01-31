@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import useScrollStatus from "./hooks/scroll-state"
+import useScrollStatus from "./hooks/use-scroll-state"
 
 const Header = (props) => {
 
