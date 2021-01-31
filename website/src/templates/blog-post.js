@@ -27,22 +27,19 @@ const BlogPostTemplate = ({ data, location }) => {
           <p>{post.frontmatter.date}</p>
         </header>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <footer>{/* TODO: Call to action */}</footer>
+        <section id="comments">
+          <script
+            src="https://utteranc.es/client.js"
+            repo="BHennen/BHennen.github.io"
+            issue-term="pathname"
+            label="Comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async
+          ></script>
+        </section>
       </article>
-      <div id="comments">
-        <script
-          src="https://utteranc.es/client.js"
-          repo="BHennen/bhennen.github.io"
-          issue-term="pathname"
-          label="Comment"
-          theme="icy-dark"
-          crossorigin="anonymous"
-          async
-        ></script>
-      </div>
       <nav className="blog-post-nav">
         <ul
           style={{
