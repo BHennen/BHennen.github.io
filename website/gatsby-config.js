@@ -30,6 +30,7 @@ module.exports = {
         extensions: [`.md`, `.mdx`],
         defaultLayouts: {
           default: require.resolve("./src/components/layout.js"),
+          blog: require.resolve("./src/templates/blog-post.js"),
         },
         gatsbyRemarkPlugins: [
           {

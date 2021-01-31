@@ -11,6 +11,7 @@ tags: ["Permaculture"]
 <!--
 TODO:
 - make image component be stylized to allow for source information
+- fix table styling
  -->
 
 Knowing and having gratitude for the inputs and outputs to our body, our land, our surrounding regions, and our global ecosystem that is our Earth will allow us to better fulfill the needs of our community and create a life which is more suitable for ourselves in our local area. By exploring our Earth and our history from a local perspective we can plan around events that occurred in our past or learn about and use resources around us which we might have otherwise overlooked. We can perform a **geographical survey** to study our local climate, topography, geology and soil, and the lifeforms that make up and surround us. By combining mindfulness of our Earth with an emotion of gratitude and thankfulness for nature and our existence, we can create better thoughts about our imagined future that lead to better actions which will enhance our lives in the everlasting present moment.
@@ -21,11 +22,11 @@ Throughout this lesson the geographical location that we will use as an example 
 
 The climate of our lands directly affects which and how many lifeforms can prosper there. It is important to stay mindful about changes that occur to our local climate so that we can plan accordingly.
 
-### Climate Classification
+### Climate Classification Systems
 
 Various regions of our Earth experience similar climatic conditions that allow similar types of lifeforms to flourish in those areas. We can use our classified region to grow many of the same lifeforms that grow in other similar regions. The following are some examples of classification systems that describe and model these regions:
 
-- #### [USDA Hardiness Zone](https://planthardiness.ars.usda.gov/PHZMWeb/)
+#### [USDA Hardiness Zone](https://planthardiness.ars.usda.gov/PHZMWeb/)
   ![Oklahoma USDA Hardiness Map.](./Maps/climate-zones/USDA-Hardiness-Zone-Map.jpg)
   Image source: "USDA Plant Hardiness Zone Map". Prism Climate Group Oregon State University. USDA. Agricultural Research Service. URL: https://planthardiness.ars.usda.gov/PHZMWeb/
 
@@ -33,7 +34,7 @@ Various regions of our Earth experience similar climatic conditions that allow s
 
   As can be seen above, our example geographical location, Tahlequah (in the northeastern region of Oklahoma), resides in zone 7a. This signifies that the mean minimum annual temperature in that region historically ranges from -17.8 to -15 °C (0 to 5 °F).
 
-- #### [Köppen-Geiger climate classification](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207062/#__sec1title)
+#### [Köppen-Geiger climate classification](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207062/#__sec1title)
 
   ![Köppen-Geiger Climate Classification Map](./Maps/climate-zones/Beck-KG-Climate-Classification-Map.png)
   Image source: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/): Beck, H.E., N.E. Zimmermann, T.R. McVicar, N. Vergopolan, A. Berg, E.F. Wood: Present and future Köppen-Geiger climate classification maps at 1‑km resolution, Scientific Data 5:180214, doi:10.1038/sdata.2018.214 (2018).
@@ -42,7 +43,7 @@ Various regions of our Earth experience similar climatic conditions that allow s
 
   According to Köppen-Geiger classification, Tahlequah resides in zone Cfa, signifying that the region is a humid subtropical climate. This means the region is classified as being temperate, has no dry season, and has a hot summer.
 
-- #### [Holdrigdge Life Zones](https://en.wikipedia.org/wiki/Holdridge_life_zones)
+#### [Holdrigdge Life Zones](https://en.wikipedia.org/wiki/Holdridge_life_zones)
   
   ![Holdridge Life Zones](./Maps/climate-zones/Holdridge-Life-Zones.svg)  
   Image source: [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5) Peter Halasz, https://commons.wikimedia.org/w/index.php?curid=1737503
