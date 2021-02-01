@@ -3,7 +3,7 @@ title: "Creating My Website Using Gatsby: Part 2 - Comments"
 slug: "creating-my-website-using-gatsby/part-2"
 description: I explore the process of how I built my personal website. I show each step in detail, covering the design process, pitfalls, tools, code, and techniques used to build the website. The second post covers how I enabled comments using Utterances with Gatsby.
 excerpt: I show the creative process of building my personal website using Gatsby.
-date: "2020-01-31"
+date: "2021-01-31"
 publish: True
 tags: ["Programming", "Creative", "Guide", "Website", "Design"]
 ---

@@ -3,7 +3,7 @@ title: "Geographical Survey"
 slug: "permaculture/geographical-survey"
 description: We can perform a geographical survey to study our local climate, topography, geology, soil, and the lifeforms that make up and surround us in order to enhance our lives.
 excerpt: I explore the inputs and outputs of our local Earth by conducting a geographical survey. 
-date: "2020-01-26"
+date: "2021-01-26"
 publish: True
 tags: ["Permaculture"]
 ---
