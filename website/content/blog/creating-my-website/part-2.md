@@ -131,7 +131,7 @@ export const Comments = props => {
 export default Comments
 ```
 
-Now that I have a commments component, it is very easy to add that to the blog post template:
+Now that I have a comments component, it is very easy to add that to the blog post template:
 
 ```JSX
 import Comments from "../components/Comments"
