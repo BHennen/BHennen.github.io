@@ -8,7 +8,8 @@ export const Comments = props => {
     script.async = true
     script.src = "https://utteranc.es/client.js"
     script.setAttribute("repo", "BHennen/BHennen.github.io")
-    script.setAttribute("issue-term", "pathname")
+    script.setAttribute("issue-term", "pathname")    
+    script.setAttribute("label", "Comment")
     script.setAttribute("theme", "github-light")
     script.setAttribute("crossorigin", "anonymous")
     comment_ref.current.appendChild(script)
