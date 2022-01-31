@@ -74,15 +74,15 @@ module.exports = {
   ],
 }
 
-// https://github.com/ChristopherBiscardi/gatsby-mdx/issues/199
-//
-// Allows import of components from any folder in src/ such as:
-//
-// import Thing from 'components/thing/whatever.js';
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
-    },
-  })
-}
+// // https://github.com/ChristopherBiscardi/gatsby-mdx/issues/199
+// //
+// // Allows import of components from any folder in src/ such as:
+// //
+// // import Thing from 'components/thing/whatever.js';
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   actions.setWebpackConfig({
+//     resolve: {
+//       modules: [path.resolve(__dirname, "src"), "node_modules"],
+//     },
+//   })
+// }

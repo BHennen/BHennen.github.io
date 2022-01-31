@@ -1,0 +1,154 @@
+---
+title: "Create an Interactive 3D Web Application"
+slug: "implementing-three-js-with-gatsby"
+description: I show the basic steps of how to get started using react-three-fiber, which is a library that links React and three.js. With these skills you can create interactive 3D web applications.
+excerpt: Create an interactive 3D web application using Gatsby, three.js, and react-three-fiber.
+date: "2022-01-30"
+publish: True
+tags: ["Programming", "Creative", "Guide", "Design", "Art"]
+---
+
+import {TestThreeBoxes} from "../../components/threejs/test-three-canvas"
+import {TestThreeABox} from "../../components/threejs/test-three-canvas"
+
+<div style={{display:'flex'}}>
+    <TestThreeABox boxPos={[0, 0, 1]}/>
+    <TestThreeABox boxPos={[0, 0, -1]}/>
+    <TestThreeABox boxPos={[0, 0, 1]}/>
+</div>
+
+<TestThreeBoxes steps={[8,2]} start={[-10, -3]} stop={[10, 3]}/>
+
+<br/><hr/>
+
+Within the browser is the ability to make full cross platform 3d applications using only javascript! The great advantage to using a browser is that the lines of code written can be used in multiple places without catering to platform-specific implementation details, making the final app very portable and accessible by phone or desktop users.
+
+The above boxes were created using [three.js](https://threejs.org/), which "is a lightweight cross-browser JavaScript library/API used to create and display animated 3D computer graphics on a Web browser." To use three.js inside Gatsby and other React applications I used a [React renderer](https://reactjs.org/docs/codebase-overview.html#renderers) called [react-three-fiber](https://github.com/pmndrs/react-three-fiber).
+
+Each box is made from the following code:
+
+```JSX
+import React, {useEffect, useRef, useState } from "react"
+import { useFrame } from "@react-three/fiber"
+
+let hoverCount = 0 // shared hover counter
+
+// Modified from original at https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+const TestThreeBox = props => {
+    // This reference will give us direct access to the mesh so we can animate it
+    const mesh = useRef<JSX.IntrinsicElements["mesh"]>()
+
+    // Set up state for the hovered and active state
+    const [hovered, setHover] = useState(false) // Local hover state
+    const [active, setActive] = useState(false) // Local active (clicked) state
+    const [time, setTime] = useState(0) //Local animation time
+    const [color, setColor] = useState(getRandomColor()) //Local cube color
+    const [c, setC] = useState(props.cycles ? props.cycles : 120) // Number of animation cycles
+    const activeScale = 2
+
+    function getRandomColor() {
+        let val = Math.random()
+        let rcolor =
+            val < 0.75
+                ? val < 0.5
+                    ? val < 0.25
+                        ? 0x369420
+                        : 0x420369
+                    : "hotpink"
+                : "skyblue"
+        return rcolor == color ? getRandomColor() : rcolor
+    }
+
+    let updateColor = (t) => {
+        if (t > c / 2) {
+            setColor(getRandomColor())
+        }
+    }
+
+    let tick = () => {
+        setTime((prevTime) => (prevTime + 1) % c) //loop every c ticks
+        let i = (time / c) * 2 * Math.PI //Scale current position in cycle from 0 to 2 pi
+        let scale =
+            (active ? activeScale : 1) +
+            (active ? activeScale : 1) * Math.sin(i) * 0.5
+        let tmp = mesh.current.scale
+        tmp["x"] = tmp["y"] = tmp["z"] = scale
+    }
+
+    useFrame(() => {
+        if (!hovered) {
+            mesh.current.rotation["x"] = mesh.current.rotation["y"] +=
+                c/100 * 0.01 * (active ? 0.5 : 2)
+
+            // continue until we hit a breakpoint at the beginning or middle of loop
+            if (time !== 1 && time !== c / 2 + 1) {
+                tick()
+            }
+        } else {
+            if (!active && time % (c / 8) == 1) updateColor(time)
+            tick()
+        }
+    })
+
+    useEffect(() => {
+        document.body.style.cursor = hoverCount > 0 ? "pointer" : "default"
+    }, [hoverCount])
+
+    return (
+        <mesh
+            {...props}
+            ref={mesh}
+            scale={active ? [2, 2, 2] : [1, 1, 1]}
+            onClick={(e) => {
+                e.stopPropagation()
+                setActive(!active)
+            }}
+            onPointerOver={(e) => {
+                e.stopPropagation()
+                hoverCount++
+                setHover(true)
+            }}
+            onPointerOut={(e) => {
+                hoverCount--
+                setHover(false)
+            }}
+        >
+            <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+            <meshStandardMaterial
+                attach="material"
+                color={hovered || active ? color : "gold"}
+            />
+        </mesh>
+    )
+}
+
+export {TestThreeBox}
+```
+
+The boxes then can be used inside any Canvas component, like so:
+
+```JSX
+import { TestThreeBox } from "./test-three-box"
+import { Canvas } from "@react-three/fiber"
+
+const TestThreeABox = (props) => (
+    <Canvas>
+        <pointLight position={[0, -5, 10]} />
+        <TestThreeBox position={props.boxPos} />
+    </Canvas>
+)
+
+export {TestThreeABox}
+```
+
+The JSX Canvas element can then be inserted into any .mdx file. The code below is what generated the three boxes above:
+
+```JSX
+import {TestThreeABox} from "../../components/threejs/test-three-canvas"
+
+<div style={{display:'flex'}}>
+    <TestThreeABox boxPos={[0, 0, 1]}/>
+    <TestThreeABox boxPos={[0, 0, -1]}/>
+    <TestThreeABox boxPos={[0, 0, 1]}/>
+</div>
+```
