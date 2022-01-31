@@ -93,6 +93,28 @@ hr {
   border: 0;
 }
 
+/* Numbered Code Blocks */
+pre{
+  white-space: pre-line;
+}
+pre code::before {
+  counter-reset: listing;
+}
+pre code .line {
+  counter-increment: listing;
+  /* display: block; */
+}
+
+pre code .line::before {
+  content: counter(listing) " ";
+  width: 2em;         
+  padding-left: auto; 
+  margin-left: auto;  
+  text-align: right;
+  display: inline-block;
+}
+
+
 /* Heading */
 
 h1,
