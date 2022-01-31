@@ -13,14 +13,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/src/blog`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/src/assets`,
         name: `assets`,
       },
     },
@@ -54,12 +54,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-slug`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     //FIXME: for RSS feeds https://www.gatsbyjs.com/plugins/gatsby-plugin-feed/: `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -70,7 +64,7 @@ module.exports = {
         background_color: `#ffffaa`,
         theme_color: `#696969`,
         display: `minimal-ui`,
-        icon: `content/assets/profile-pic.jpg`,
+        icon: `src/assets/profile-pic.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -34,7 +34,7 @@ const ReturnToTop = props => {
           href="#top-of-page"
           style={{ ...containerStyles, ...transitionStyles[transitionState] }}
         >
-          <span class="screen-reader-text">Return to top of page.</span>
+          <span className="screen-reader-text">Return to top of page.</span>
           <svg viewBox="0 0 54 54" style={{ ...arrowStyles }}>
             <g>
               <path

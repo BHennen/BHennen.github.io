@@ -1,0 +1,1 @@
+Components that you would like to add to markdown files in blog posts need to be added to the shortcodes list in ./layout.js
