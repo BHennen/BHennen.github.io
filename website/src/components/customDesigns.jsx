@@ -45,6 +45,7 @@ export const myCode = (props) => {
         } else {
             // if obj is iterable use it, otherwise use obj children
             let iter = obj.forEach ? obj : obj.props.children
+            if(!iter.forEach) {iter=[iter]}
             iter.forEach((child) => {
                 extractNewlines(child)
             })
